@@ -1,0 +1,42 @@
+[
+ {
+  "value": 1,
+  "label": "DÖVİZ BÜROSU"
+ },
+ {
+  "value": 2,
+  "label": "TALİH OYUNLARI, KUMARHANE"
+ },
+ {
+  "value": 3,
+  "label": "KUYUMCU, ALTIN VE ELMAS GİBİ DEĞERLİ TAŞ VE MADEN TİCARETİ"
+ },
+ {
+  "value": 4,
+  "label": "ARAÇ SATAN GALERİ"
+ },
+ {
+  "value": 5,
+  "label": "ANTİKACI, SANAT GALERİSİ"
+ },
+ {
+  "value": 6,
+  "label": "RESTORAN"
+ },
+ {
+  "value": 7,
+  "label": "AKARYAKIT ISTASYONU"
+ },
+ {
+  "value": 8,
+  "label": "SİLAH VE DİĞER ASERİ ÜRÜN VE MALZEMELERİN DAĞITIM VE ÜRETİMİ"
+ },
+ {
+  "value": 9,
+  "label": "VAKIF VEYA DERNEK"
+ },
+ {
+  "value": 11,
+  "label": "HİÇBİRİ"
+ }
+]

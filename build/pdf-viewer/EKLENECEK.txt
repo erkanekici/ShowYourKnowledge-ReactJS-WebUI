@@ -1,0 +1,4 @@
+C:\Users\fbdk006452\Desktop\gosterBilgini\public\pdf-viewer
+
+https://mozilla.github.io/pdf.js/getting_started/#download
+https://www.pdftron.com/blog/react/how-to-build-a-react-pdf-viewer/

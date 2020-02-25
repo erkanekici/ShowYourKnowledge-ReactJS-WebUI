@@ -1,0 +1,8 @@
+input[type=tel]:focus, input[type=text]:focus{
+    border: 1px solid #0057b8;
+}
+.react-select__control--is-focused {
+     border-color: #0057b8 !important;
+}
+.react-select__input{ margin-top: 5px;
+}

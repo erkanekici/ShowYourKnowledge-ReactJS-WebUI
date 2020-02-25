@@ -1,0 +1,79 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.9.0"
+  },
+  "dependencies": {
+    "@loadable/component": "^5.10.2",
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.40",
+    "await-timeout": "^0.5.0",
+    "axios": "^0.19.0",
+    "core-js": "^3.1.3",
+    "date-fns": "^2.0.0-alpha.27",
+    "env-cmd": "^9.0.3",
+    "formik": "^1.5.7",
+    "lodash-es": "^4.17.11",
+    "matchmedia-polyfill": "^0.3.2",
+    "normalize.css": "^8.0.1",
+    "numeral": "^2.0.6",
+    "react": "^16.8.6",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-datepicker": "^2.6.0",
+    "react-dom": "^16.8.6",
+    "react-lottie": "^1.2.3",
+    "react-redux": "^7.1.3",
+    "react-responsive": "^6.1.2",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "react-select": "^2.4.3",
+    "react-stomp": "^4.2.0",
+    "react-talk": "^1.0.0",
+    "react-text-mask": "^5.4.3",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "regenerator-runtime": "^0.13.2",
+    "source-map-explorer": "^2.0.1",
+    "styled-components": "^4.2.1",
+    "styled-media-query": "^2.1.1",
+    "validator": "^11.0.0"
+  },
+  "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "react-scripts start",
+    "build:internal": "react-scripts build",
+    "build:test": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 9",
+      "not op_mini all"
+    ],
+    "development": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 9",
+      "not op_mini all"
+    ]
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "babel": {
+    "plugins": [
+      "babel-plugin-styled-components"
+    ]
+  }
+}
