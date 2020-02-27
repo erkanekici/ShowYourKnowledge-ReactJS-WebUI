@@ -230,7 +230,7 @@ class Register extends Component {
                 <PersonAdd />
               </Avatar>
               <Typography component="h1" variant="h5" style={{color: "#0007C9"}}>
-                Üye Ol
+                Kayıt Ol
              </Typography>
               <Form>
                 {/* <Grid container spacing={2}> */}
@@ -334,14 +334,14 @@ class Register extends Component {
                     )
                   }}
                 />
-                <Grid>
+                {/* <Grid>
                   <Grid item xs={12}>
                     <FormControlLabel                     
                       control={<Checkbox value="allowExtraEmails" color="primary"/>}
                       label={<Typography style={{fontSize: "14px"}}>Kampanyalardan ve haberlerden e-posta aracılığıyla haberdar olmak istiyorum.</Typography>}
                     /> 
                  </Grid>
-                </Grid> 
+                </Grid>  */}
                 <Button
                   type="submit"
                   fullWidth

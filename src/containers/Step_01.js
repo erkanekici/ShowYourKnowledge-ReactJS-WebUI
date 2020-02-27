@@ -111,10 +111,10 @@ class StepFirst extends Component {
     return (
       <Fragment>
 
-        <TopMenu
+        {/* <TopMenu
           setContent={this.setContent}
           changePage={this.changePage}
-        />
+        /> */}
 
         <MainPageContent
           {...this.props}
@@ -125,9 +125,9 @@ class StepFirst extends Component {
           changePage={this.changePage}
         />
 
-        <Footer
+        {/* <Footer
           setContent={this.setContent}
-        />
+        /> */}
       </Fragment>
     );
   }

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import media from './Media'
 
 const ContentStyle = styled.div`
- min-height: calc(100vh - 110px);
+ min-height: calc(100vh - 0px);
  ${media.greaterThan('lg')`
   //min-height: calc(100vh - 110px);
  `}

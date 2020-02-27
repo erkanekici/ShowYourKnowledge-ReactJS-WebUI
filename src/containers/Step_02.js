@@ -149,7 +149,10 @@ class StepSecond extends Component {
         render={({ isSubmitting, errors, touched }) => (
           <Fragment>
             <Form>
-              <Button
+              <Typography component="h1" variant="h3" style={{color:"#0007C9"}}>
+                GİRİŞ BAŞARILI
+              </Typography>
+              {/* <Button
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -158,7 +161,7 @@ class StepSecond extends Component {
                 style={isSubmitting ? submitButtonDisabledStyle : submitButtonStyle}
               >
                 OYUNA BAŞLA
-              </Button>
+              </Button> */}
             </Form>
             {this.props.isErrorExist && (
               <ErrMsg component="div" marginclear="true">

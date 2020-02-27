@@ -30,6 +30,7 @@ import Register from '../Register'
 import ScoreList from '../ScoreList'
 import CategoryList from '../CategoryList'
 import TextContent from '../TextContent'
+import MediaQuery from 'react-responsive'
 
 class MainPageContent extends Component {
 
@@ -116,13 +117,60 @@ class MainPageContent extends Component {
       marginTop: "10px",
       marginBottom: "10px"
     }
+    const miksGridStyle = {      
+      minHeight:"100vh",
+      paddingTop: "10%"
+    }
     return (
       <Fragment>
         <ContentStyle>
-          <Grid container justify="center">
+          <MediaQuery query={`(max-width:1149px)`}>
+            <Grid container justify="center">
+            <ContentWrapper>
+                    {this.props.isLogin ? (
+                      <Login
+                        {...this.props}
+                        {...this.state}
+                        login={this.props.login}
+                        goRegisterPage={() => this.props.changePage("register")}
+                        forgotPassword={() => this.setState({ isLogin: false })}
+                      />
+                    ) : (
+                      <Register
+                        {...this.props}
+                        {...this.state}
+                        register={this.props.register}
+                        goLoginPage={() => this.props.changePage("login")}
+                      />
+                    )}
+                  </ContentWrapper>
+                </Grid>
+          </MediaQuery>
+          <MediaQuery query={`(min-width:1150px)`}>
+            <Grid container justify="center" style={miksGridStyle}>
+              <ContentWrapper>
+                    {this.props.isLogin ? (
+                      <Login
+                        {...this.props}
+                        {...this.state}
+                        login={this.props.login}
+                        goRegisterPage={() => this.props.changePage("register")}
+                        forgotPassword={() => this.setState({ isLogin: false })}
+                      />
+                    ) : (
+                      <Register
+                        {...this.props}
+                        {...this.state}
+                        register={this.props.register}
+                        goLoginPage={() => this.props.changePage("login")}
+                      />
+                    )}
+                  </ContentWrapper>
+                </Grid>
+          </MediaQuery>          
 
           {/*Bolum1*/}
-            <Grid style={inlineGridStyle}>
+            {/* <Grid style={inlineGridStyle}>
               <ContentWrapper style={{ width: "240px", height: "auto", minHeight:"700px", padding: 15 }}>
                 <ScoreList
                   {...this.props}
@@ -145,17 +193,17 @@ class MainPageContent extends Component {
                   list={this.state.weeklyBestList}
                 />
               </ContentWrapper>
-            </Grid>
+            </Grid> */}
 
           {/*Bolum2*/}
-            {this.props.mainContent && (
-              <Grid > {/*The prop `direction` of `Grid` must be used on `container`.*/}
-                <Grid>
-                  <ContentWrapper style={bannerStyle}>
-                    <Logo alt="mainBanner" src={banner} />
-                  </ContentWrapper>
-                </Grid>
-                <Grid>
+            {/* {this.props.mainContent && (
+              <Grid >
+                 <Grid>
+                   <ContentWrapper style={bannerStyle}>
+                     <Logo alt="mainBanner" src={banner} />
+                   </ContentWrapper>
+                 </Grid>
+                 <Grid>
                   <ContentWrapper>
                     {this.props.isLogin ? (
                       <Login
@@ -174,9 +222,9 @@ class MainPageContent extends Component {
                       />
                     )}
                   </ContentWrapper>
-                </Grid>
-              </Grid>
-            )}
+                 </Grid>
+               </Grid>
+            )} */}
             {this.props.rules && (
                <TextContent
                 contentType = "rules"
@@ -194,7 +242,7 @@ class MainPageContent extends Component {
             )}
 
           {/*Bolum3*/}
-            <Grid style={inlineGridStyle}>
+            {/* <Grid style={inlineGridStyle}>
               <ContentWrapper style={{ width: "240px", height: "auto", minHeight:"700px", padding: 15 }}>
                 <CategoryList
                   {...this.props}
@@ -203,9 +251,9 @@ class MainPageContent extends Component {
                   //list={this.state.categoryList}
                 />
               </ContentWrapper>
-            </Grid>
+            </Grid> */}
 
-          </Grid>
+          {/* </Grid> */}
         </ContentStyle>
       </Fragment>
     );
