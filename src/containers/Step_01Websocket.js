@@ -51,7 +51,7 @@ class StepFirst extends Component {
     ...pick(this.props, 'transactionId', 'channelCode', 'companyCode')
    })
    .then((resp) => {
-    debugger;
+    
     console.log(this.props.topic);
     this.setState({ adres: this.props.topic })
     this.setState({ startConnection: true })
@@ -67,23 +67,23 @@ class StepFirst extends Component {
  }
 
  onConnected = (msg, topic) => {
-  debugger;
+  
   this.setState({ connected: true })
  }
 
  onMessageReceive = (mesaj, topic) => {
-  debugger;
+  
   this.setState({ messages: [mesaj.msg] })
  }
 
  onDisconnected = (msg, topic) => {
-  debugger;
+  
   this.setState({ connected: false })
   this.setState({ startConnection: false })
  }
 
  sendMessage = () => {
-  debugger;
+  
   try {
    var opt_headers = {
     login: 'optLog',

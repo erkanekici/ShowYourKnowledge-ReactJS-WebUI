@@ -58,13 +58,13 @@ class StepFirst extends Component {
     }
   }
 
-  login = (data = {}) => { debugger;
+  login = (data = {}) => {
     return this.props
       .login({
         ...data,
         ...pick(this.props, 'transactionId')
       })
-      .then((resp) => { debugger;
+      .then((resp) => {
         if (this.props.hasError) {
           this.setState({ isErrorExist: true })
           this.setState({ errorMessageContent: resp.error })
@@ -111,10 +111,10 @@ class StepFirst extends Component {
     return (
       <Fragment>
 
-        {/* <TopMenu
+        <TopMenu
           setContent={this.setContent}
           changePage={this.changePage}
-        /> */}
+        />
 
         <MainPageContent
           {...this.props}
@@ -125,9 +125,10 @@ class StepFirst extends Component {
           changePage={this.changePage}
         />
 
-        {/* <Footer
+        <Footer
           setContent={this.setContent}
-        /> */}
+        />
+
       </Fragment>
     );
   }

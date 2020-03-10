@@ -53,6 +53,10 @@ class TopMenu extends Component {
     this.setState({ anchor: event.currentTarget })
   };
 
+  handleClose(event) {
+    this.setState({ anchor: null })
+  }
+
   goLogin = () => {
     this.setState({ anchor: null })
     this.props.setContent("mainContent")
@@ -65,12 +69,12 @@ class TopMenu extends Component {
     this.props.changePage("register")
   };
 
-  handleListKeyDown(event) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      this.setState({ anchor: null })
-    }
-  }
+  // handleListKeyDown(event) {
+  //   if (event.key === 'Tab') {
+  //     event.preventDefault();
+  //     this.setState({ anchor: null })
+  //   }
+  // }
 
   render() {
     const fontStyle = {  //variant="h6"     

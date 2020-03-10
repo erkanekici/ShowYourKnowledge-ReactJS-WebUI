@@ -113,7 +113,7 @@ class StepThird extends Component {
     }
   }
 
-  handleChangeTextArea = event => { debugger;
+  handleChangeTextArea = event => {
     const { value } = event.target;
     this.setState({ msg: value });
   };

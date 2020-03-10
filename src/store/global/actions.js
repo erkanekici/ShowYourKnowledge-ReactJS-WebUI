@@ -17,7 +17,7 @@ export default service => payload => {
      payload: { ...payload, ...res }
     })
    })
-   .catch(err => { debugger;
+   .catch(err => { 
     return dispatch({ type: GLOBAL_REQUEST_ERROR, error: err.message })
    })
  }

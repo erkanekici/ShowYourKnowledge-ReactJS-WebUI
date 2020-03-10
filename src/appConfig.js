@@ -3,15 +3,15 @@ window.APP_CONFIG = {
   ServiceStep1: {
     service_base_url: BASE_URL + '/serviceCaller/ServiceStep1',
     headers: {
-      username: process.env.REACT_APP_HEADERS_ServiceStep1_USERNAME,
-      password: process.env.REACT_APP_HEADERS_ServiceStep1_PASSWORD
+      //username: process.env.REACT_APP_HEADERS_ServiceStep1_USERNAME,
+      //password: process.env.REACT_APP_HEADERS_ServiceStep1_PASSWORD
     }
   },
   INSTANTCreditService: {
     service_base_url: BASE_URL + '/serviceCaller/INSTANTCreditService',
     headers: {
-      username: process.env.REACT_APP_HEADERS_INSTANTCREDITSERVICE_USERNAME,
-    password: process.env.REACT_APP_HEADERS_INSTANTCREDITSERVICE_PASSWORD
+      //username: process.env.REACT_APP_HEADERS_INSTANTCREDITSERVICE_USERNAME,
+      //password: process.env.REACT_APP_HEADERS_INSTANTCREDITSERVICE_PASSWORD
     }
   },
   document_base_url: BASE_URL + '/document',

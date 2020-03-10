@@ -181,8 +181,7 @@ class Login extends Component {
   render() {
     const avatarStyle = {
       marginBottom: "5px",
-      backgroundColor: "#0007C9",
-      //backgroundColor: "#dc004e",      
+      backgroundColor: "#dc004e",
     };
     const submitButtonStyle = {
       backgroundColor: "#27c007",
@@ -288,7 +287,7 @@ class Login extends Component {
                       style={{ float: "right", color: "black" }} href="#" variant="body2"
                       onClick={this.props.goRegisterPage}
                     >
-                      Bir hesabın yok mu? <b><font color="#0007C9">Kayıt Ol</font></b>
+                      Bir hesabın yok mu? <b><font color="#0007C9">Üye Ol</font></b>
                     </Link>
                   </Grid>
                 </Grid>

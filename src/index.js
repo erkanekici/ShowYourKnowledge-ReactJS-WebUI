@@ -13,18 +13,18 @@ import GlobalStyle from './components/styled/Global'
 import Theme from './components/styled/Theme'
 import App from './containers/App'
 import store from './store'
-import background from './images/login_background.png'
-import {Logo} from './components/styled/Layout'
+// import background from './images/login_background.png'
+// import {Logo} from './components/styled/Layout'
 
 const rootElement = document.getElementById('root')
 
 const mainStyle = {
   backgroundColor: "#ff9100",
-  backgroundImage: `url(${background})`,
-  backgroundAttachment: "fixed",
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center"
+  // backgroundImage: `url(${background})`,
+  // backgroundAttachment: "fixed",
+  // backgroundSize: "cover",
+  // backgroundRepeat: "no-repeat",
+  // backgroundPosition: "center"
 }
 
 ReactDOM.render(

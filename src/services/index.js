@@ -10,7 +10,7 @@ const globalServiceHandler = ({ data = {} }) => {
  
  if (resultCode != null && trim(toString(resultCode)) !== SERVICE_SUCCESS_CODE) {
   const errorMessage = trim(payload.errorMessage) 
-  debugger;
+  
   //throw new Error(JSON.stringify(errorMessage))
   throw new Error(errorMessage)
  }
