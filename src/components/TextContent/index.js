@@ -30,6 +30,7 @@ import Login from '../Login'
 import Register from '../Register'
 import ScoreList from '../ScoreList'
 import CategoryList from '../CategoryList'
+import GoogleMap from '../GoogleMap'
 
 class TextContent extends Component {
 
@@ -171,9 +172,25 @@ class TextContent extends Component {
                 </Typography>
               )}
               {this.props.contentType === "contact" && (
+               <Fragment>
                 <Typography variant="h5" gutterBottom align="center">
                   İletişim
                 </Typography>
+                <GoogleMap
+                  id="myMap"
+                  options={{
+                    center: { lat: 41.0082, lng: 28.9784 },
+                    zoom: 8
+                  }}
+                  onMapLoad={map => {
+                    var marker = new window.google.maps.Marker({
+                      position: { lat: 41.0082, lng: 28.9784 },
+                      map: map,
+                      title: 'Merhaba İstanbul!'
+                    });
+                  }}
+                />
+              </Fragment>
               )}              
               <div
                 id="shadowBottom"

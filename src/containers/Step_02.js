@@ -19,13 +19,18 @@ import Container from '@material-ui/core/Container';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import { SetProductCode } from '../components/Products'
 import { getOfferedProductList } from '../store/products/actions'
+import TopMenu from '../components/TopMenu'
+import Footer from '../components/Footer'
+import ContentStyle from '../components/styled/ContentStyle'
+import UserDashboard from '../components/UserDashboard'
 
 class StepSecond extends Component {
   STEP_3_PATH = routePathByName('Step_03')
 
   state = {
     isErrorExist: false,
-    errorMessageContent: ''
+    errorMessageContent: '',
+    isLoginSuccessful: true
   }
 
   componentDidMount() {
@@ -70,7 +75,7 @@ class StepSecond extends Component {
   onSubmit = (values, actions) => {
     const request =
     {
-      email: this.props.email,      
+      email: this.props.email,
     };
     //Bu setSubmitting kalkacak ve zaten submit button olmayacak ve button disabled durumunu state den yönet
     actions.setSubmitting(true)
@@ -79,14 +84,14 @@ class StepSecond extends Component {
     })
   }
 
-  getTopic = (data = {}) => {    
+  getTopic = (data = {}) => {
     return this.props
-    .getTopic({
-      ...data,
-      ...pick(this.props, 'transactionId')
-    })
+      .getTopic({
+        ...data,
+        ...pick(this.props, 'transactionId')
+      })
       .then((resp) => {
-        
+
         if (this.props.hasError) {
           this.setState({ isErrorExist: true })
           this.setState({ errorMessageContent: resp.error })
@@ -94,26 +99,26 @@ class StepSecond extends Component {
         else {
           this.setState({ isErrorExist: false })
           this.setState({ errorMessageContent: "" })
-          if(this.props.gameStatus == 1){
+          if (this.props.gameStatus == 1) {
             //Oyun Sayfasina Gec
             this.props.history.replace(this.STEP_3_PATH)
           }
-          else{
+          else {
             //Oyuncu bekleniyor
             this.getGameStatus(this.props.topicId)
-          }          
+          }
         }
       })
   }
 
   getGameStatus = (topicId) => {
     return this.props
-    .getGameStatus({
-      topicId,
-      ...pick(this.props, 'transactionId')
-    })
+      .getGameStatus({
+        topicId,
+        ...pick(this.props, 'transactionId')
+      })
       .then((resp) => {
-        
+
         if (this.props.hasError) {
           this.setState({ isErrorExist: true })
           this.setState({ errorMessageContent: resp.error })
@@ -121,53 +126,38 @@ class StepSecond extends Component {
         else {
           this.setState({ isErrorExist: false })
           this.setState({ errorMessageContent: "" })
-          if(this.props.gameStatus == 1){
+          if (this.props.gameStatus == 1) {
             //Oyun Sayfasina Gec
             this.props.history.replace(this.STEP_3_PATH)
-          }else{
+          } else {
             //Oyuncu bekleniyor
             this.getGameStatus(this.props.topicId)
-          }          
+          }
         }
       })
   }
 
-  render() {
-    const submitButtonStyle = {
-      backgroundColor: "#27c007",
-      height: "55px",
-      marginTop: "16px"
-    };
-    const submitButtonDisabledStyle = {
-      height: "55px",
-      marginTop: "16px"
-    };
+  render() {    
     return (
-      <Formik
-        initialValues={{ ...this.state }}
-        onSubmit={this.onSubmit}
-        render={({ isSubmitting, errors, touched }) => (
-          <Fragment>
-            <Form>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="secondary"
-                disabled={isSubmitting}
-                style={isSubmitting ? submitButtonDisabledStyle : submitButtonStyle}
-              >
-                OYUNA BAŞLA
-              </Button>
-            </Form>
-            {this.props.isErrorExist && (
-              <ErrMsg component="div" marginclear="true">
-                {this.props.errorMessageContent}
-              </ErrMsg>
-            )}
-          </Fragment>
-        )} //Formik render
-      /> //Formik
+      <Fragment>
+        <TopMenu
+          {...this.state}
+          setContent={this.setContent}
+          changePage={this.changePage}
+        />
+
+        <UserDashboard
+          {...this.props}
+          {...this.state}
+          clearErrors={this.clearErrors}
+          changePage={this.changePage}
+        />       
+
+        <Footer
+          setContent={this.setContent}
+        />
+      </Fragment>
+
     ); //return
   } //render
 }

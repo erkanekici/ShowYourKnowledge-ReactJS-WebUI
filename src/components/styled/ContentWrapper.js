@@ -19,9 +19,9 @@ const ContentWrapper = styled.div`
   min-height: 350px;
  `}
  ${media.greaterThan('xl')`
-  width: 800px;
+  //width: 800px;
   //margin-left: 0;
-  padding: 30px 30px 65px 30px;
+  padding: 30px 30px 30px 30px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;

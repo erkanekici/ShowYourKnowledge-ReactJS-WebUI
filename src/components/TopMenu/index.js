@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AppBar from '@material-ui/core/AppBar';
+import Container from '@material-ui/core/Container';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import LanguageIcon from '@material-ui/icons/Language';
@@ -82,20 +83,24 @@ class TopMenu extends Component {
       fontFamily: '"Roboto", "Helvetica", "Arial" , "sans-serif"',
       fontWeight: 500,
       lineHeight: 1.6,
-      letterSpacing: "0.0075em"
+      letterSpacing: "0.0075em",
+      backgroundColor: "black"
     }
     const accountButtonStyle = {
       marginLeft: 5,
       fontSize: "1.25rem",
       textTransform: "unset",
-      backgroundColor: this.state.accountButtonEffect
+      backgroundColor: this.state.accountButtonEffect,
+      color: "white"
     }
     const linkButtonStyle = {
       marginLeft: 10,
       marginRight: 10,
+      color: "white"
     }
     const appBarStyle = {
-      backgroundColor: "black"
+      backgroundColor: "black",     
+      textAlign: "center"
     }
     const dividerStyle = {
       borderStyle: "inset",
@@ -120,9 +125,10 @@ class TopMenu extends Component {
     return (
       <Fragment>
         <div style={fontStyle}>
-          <AppBar position="static" style={appBarStyle} elevation={10} >
-            <Toolbar variant="dense">
-              <a href={link} style={{ flexGrow: 0, height: "70px", marginRight: "20px" }}>
+          <AppBar position="static" style={appBarStyle} elevation={10} > 
+          <Container maxWidth="lg" style={{padding:0}}>
+            <Toolbar variant="dense" style={{padding:0}} >
+              <a href={link} style={{ flexGrow: 0, height: "70px", marginRight: "20px"}}>
                 <Logo alt="topLogo" src={gameLogo} />
               </a>
               {/* <Link
@@ -306,7 +312,8 @@ class TopMenu extends Component {
               </List> */}
 
             </Toolbar>
-          </AppBar>
+            </Container>
+           </AppBar> 
         </div>
       </Fragment>
     );

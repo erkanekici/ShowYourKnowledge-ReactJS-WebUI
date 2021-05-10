@@ -42,9 +42,6 @@ class Login extends Component {
         this.setState({ captcha: token })
       })
     })
-
-    //captcha badge gizleme
-    //document.getElementsByClassName("grecaptcha-badge")[0].style.visibility = "hidden"
   }
 
   addGTM() {

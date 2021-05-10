@@ -4,7 +4,6 @@ import { pick } from 'lodash-es'
 import globalAction from '../store/global/actions'
 import { routePathByName } from '../routes'
 import MainPageContent from '../components/MainPageContent'
-import Footer from '../components/Footer'
 import ContentWrapper from '../components/styled/ContentWrapper'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -16,6 +15,7 @@ import gameLogo from '../images/logom.png'
 import Login from '../components/Login'
 import Register from '../components/Register'
 import TopMenu from '../components/TopMenu'
+import Footer from '../components/Footer'
 
 class StepFirst extends Component {
   STEP_2_PATH = routePathByName('Step_02')
@@ -68,6 +68,7 @@ class StepFirst extends Component {
         if (this.props.hasError) {
           this.setState({ isErrorExist: true })
           this.setState({ errorMessageContent: resp.error })
+          this.props.history.replace(this.STEP_2_PATH)
         }
         else {
           this.setState({ isErrorExist: false })

@@ -182,18 +182,18 @@ class MainPageContent extends Component {
               </Grid>
             )}
             {this.props.rules && (
-               <TextContent
+              <TextContent
                 contentType = "rules"
-               />
+              />
             )}
             {this.props.help && (
-             <TextContent
-             contentType = "help"
-            />
+              <TextContent
+                contentType = "help"
+              />
             )}
              {this.props.contact && (
               <TextContent
-              contentType = "contact"
+                contentType = "contact"
              />
             )}
 
